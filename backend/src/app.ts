@@ -2,6 +2,8 @@ import Fastify from "fastify";
 import cookie from "@fastify/cookie";
 
 import { authRoutes } from "./modules/auth/auth.routes.js";
+import { commentRoutes } from "./modules/engagement/comments.routes.js";
+import { metooRoutes } from "./modules/engagement/metoo.routes.js";
 import { painReadRoutes } from "./modules/pains/pains.read.routes.js";
 import { painRoutes } from "./modules/pains/pains.routes.js";
 import { healthRoutes } from "./modules/health/health.routes.js";
@@ -25,6 +27,8 @@ export const buildApp = async (options: BuildAppOptions = {}) => {
   await app.register(authRoutes, { prefix: "/api/v1" });
   await app.register(painRoutes, { prefix: "/api/v1" });
   await app.register(painReadRoutes, { prefix: "/api/v1" });
+  await app.register(metooRoutes, { prefix: "/api/v1" });
+  await app.register(commentRoutes, { prefix: "/api/v1" });
 
   return app;
 };
