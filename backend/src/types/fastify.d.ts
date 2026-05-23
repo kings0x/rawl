@@ -1,3 +1,4 @@
+import type { OAuth2Namespace } from "@fastify/oauth2";
 import type { AccessTokenClaims } from "../shared/security/tokens.js";
 
 declare module "fastify" {
@@ -11,6 +12,6 @@ declare module "fastify" {
   }
 
   interface FastifyInstance {
-    googleOAuth2?: import("@fastify/oauth2").OAuth2Namespace;
+    googleOAuth2?: OAuth2Namespace;
   }
 }

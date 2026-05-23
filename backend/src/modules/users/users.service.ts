@@ -12,7 +12,8 @@ export type PublicUser = Omit<typeof usersTable.$inferSelect, "passwordHash">;
 export const normalizeEmail = (email: string) => email.trim().toLowerCase();
 
 export const toPublicUser = (user: typeof usersTable.$inferSelect): PublicUser => {
-  const { passwordHash: _passwordHash, ...rest } = user;
+  const { passwordHash, ...rest } = user;
+  void passwordHash;
   return rest;
 };
 

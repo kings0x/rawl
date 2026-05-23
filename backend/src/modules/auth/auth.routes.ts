@@ -213,7 +213,7 @@ export const authRoutes: FastifyPluginAsync = async (app) => {
     {
       preHandler: authenticate,
     },
-    async (request) => ({
+    (request) => ({
       user: request.user,
     }),
   );
