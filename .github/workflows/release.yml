@@ -13,5 +13,8 @@ jobs:
       name: production
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.18.2
       - run: docker build -t rawl-backend:production .
       - run: echo "Deploy to Render production once environment-protected secrets are configured."
