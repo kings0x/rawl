@@ -1,0 +1,13 @@
+backend/node_modules
+backend/dist
+backend/coverage
+backend/.env
+backend/drizzle
+backend/CONTEXT.md
+backend/API_SPEC.md
+backend/SCHEMA.md
+backend/PHASES.md
+backend/CHANGELOG.md
+AGENTS.md
+backend/package-lock.json
+.phase-backup/

@@ -1,0 +1,17 @@
+name: Release Production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    environment:
+      name: production
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t rawl-backend:production .
+      - run: echo "Deploy to Render production once environment-protected secrets are configured."
